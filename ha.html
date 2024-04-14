@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KENAH QUIZ</title>
+<style>
+    body {
+        background-color: pink;
+        text-align: center;
+    }
+    #envelope {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #buttons {
+        margin-top: 20px;
+    }
+    .button {
+        background-color: pink;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin: 0 10px;
+    }
+    #message {
+        display: none;
+        font-size: 44px;
+        margin-top: 20px;
+    }
+    .rotate {
+        animation: spin 5s linear infinite;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+</head>
+<body>
+<div id="envelope">
+    <img src="chickenv.gif" alt="Envelope" />
+    <div id="buttons">
+        <button class="button" onclick="yesClicked()">Kenah's my ONLY bae</button>
+        <button class="button" onclick="noClicked()">I have other baes</button>
+    </div>
+    <div id="message">YOU ARE SO COOL, I LOVE YOU</div>
+</div>
+
+<script>
+function yesClicked() {
+    document.body.style.backgroundColor = "pink";
+    document.getElementById("buttons").style.display = "none";
+    document.getElementById("envelope").innerHTML = '<img src="giphy.gif" alt="Hello Kitty" class="rotate" />';
+    setTimeout(function() {
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerText = "I love you";
+    }, 2000);
+}
+
+function noClicked() {
+    document.getElementById("envelope").innerHTML = '<div class="rotate">You are so weird, ew ew fr! </div>';
+    setTimeout(function() {
+        document.getElementById("envelope").innerHTML = "";
+    }, 5000);
+}
+</script>
+</body>
+</html>
